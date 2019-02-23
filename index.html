@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Afin de valider ton code HTML, clic sur la petite flèche en haut à droite de cette fenêtre. 
+    Pour rappel, tu peux jeter un oeil par ici pour en savoir un peu plus: https://blog.codepen.io/2017/10/11/analyze-css-now-using-stylelint/ -->
+
+<head>
+    <link rel="stylesheet" href="index.css">
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wild Circus since 1919</title>
+    <meta name="description"
+        content="The Wild Circus celebrate its 100 years anniversary in your town this month. Get your kids ready for a lot of fun with our hilarious team!">
+</head>
+
+<body>
+    <header>
+        <h1>Wild Circus</h1>
+    </header>
+    <!-- I removed the nav from the header to enable "sticky position" on nav -->
+    <nav>
+        <ul>
+            <!-- ✔️: Les liens du menu doivent nous emmener vers les sections correspondantes dans la page -->
+            <li><a href="#performances">Performances</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#prices">Prices</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- When you click on the SVG arrow item, you go back to the top -->
+    <!-- svg item from https://material.io/tools/icons/?style=baseline -->
+    <div id="top" title="Click to go to top">
+        <svg onclick="topFunction()" xmlns="http://www.w3.org/2000/svg" viewBox="-4 -4 32 32">
+            <path fill="none" d="M0 0h24v24H0V0z" />
+            <path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z" />
+        </svg>
+    </div>
+
+    <!-- When you click on the SVG sun item, the theme colors changes -->
+    <div id="switch" title="Click to switch theme color">
+        <!-- svg item from https://material.io/tools/icons/?style=baseline -->
+        <svg onclick="switchTheme('dark')" xmlns="http://www.w3.org/2000/svg" viewBox="-4 -4 32 32">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z" />
+        </svg>
+        <svg onclick="switchTheme('light')" xmlns="http://www.w3.org/2000/svg" viewBox="-5 1 32 32">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z" />
+        </svg>
+    </div>
+
+    <section id="performances">
+        <h2>Performances</h2>
+        <!-- ✔️: En utilisant du css place ces trois performances ("lough", "dream, "marvel at") sur la même ligne en enlevant le point généré par la balise "li". Attention, utilise bien le css pour aligner les éléments, tu ne dois pas enlever les balises "li"-->
+        <ul>
+            <!-- performance 1 -->
+            <li class="card">
+                <h3>🤡 Laugh</h3>
+                <p>As an adult, come and discover our irresistible clowns, between practical jokes and pranks let
+                    yourself be carried away by their joy and fall back into childhood.</p>
+            </li>
+            <!-- performance 2 -->
+            <li class="card">
+                <h3>✨ Dream</h3>
+                <p>Let yourself be carried away in a world where the real and the imaginary are one, in the company of
+                    our talented magicians, discover a wonderful world limited only by your imagination.</p>
+            </li>
+            <!-- performance 3 -->
+            <li class="card">
+                <h3>🐯 Marvel at</h3>
+                <p>Tame the untameable in the company of our tamers, between roar and razor-sharp claws, watch these
+                    fierce felines turn into sweet kittens.</p>
+            </li>
+        </ul>
+    </section>
+
+    <hr />
+
+    <section id="about">
+        <h2>About Us</h2>
+        <!-- ✔️: Cette section n'a pas encore été réalisée, tu as carte blanche pour nous montrer ta créativité -->
+        <h3>Celebrating 100 years of passion and fun!</h3>
+        <p>
+            At Wild Circus, generations follow one another with the same love of the profession and the same quirky sense of humor.
+        </p>
+        <p>
+            Click to discover the last irresistible jokes from our unconventional magicians, clown, and even animals!
+        </p>
+        <!-- Game -->
+        <h4> 
+            Special Anniversary Game
+            <br/> 3, 2, 1, CLIIIIICK!
+        </h4>
+        <article>
+            <button onclick="previous()">Previous</button>
+            <div id="board"></div>
+            <button onclick="next()">Next</button>
+        </article> 
+    </section>
+
+    <hr />
+
+    <section id="prices">
+        <h2>Prices</h2>
+        <!-- ✔️:  Réalise un tableau qui présente les différents prix. Exemple (aggrandis la fenêtre en largeur pour bien voir l'exemple ci-dessous) :
+    
+                                    | Adultes | Enfants de moins de 12 ans | Groupes (plus de 10 personnes) | Ecoles
+            Semaines hors mercredi  |         |                         |                                |
+            week-end et mercredi    |         |                         |                                |
+          -->
+
+        <table>
+            <!-- First row with tabuldar headers -->
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Adults</th>
+                    <th>Children younger than 12 years old</th>
+                    <th>Groups (more than 10 people)</th>
+                    <th>Schools</th>
+                </tr>
+            </thead>
+            <!-- Following rows begins with one tabular header and then tabulars data -->
+            <tbody>
+                <tr>
+                    <th>Week except Wednesday</th>
+                    <td>€16</td>
+                    <td>€9</td>
+                    <td>€14</td>
+                    <td>€11</td>
+                </tr>
+                <tr>
+                    <th>Weekend and Wednesday</thd>
+                    <td>€20</td>
+                    <td>€9</td>
+                    <td>€16</td>
+                    <td>€14</td>
+                </tr>
+            </tbody>
+        </table>
+        <button>
+            <a href="#contact">Contact us to Book your ticket</a>
+        </button>
+    </section>
+
+    <hr />
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <!-- ✔️: Réalise un formulaire de contact avec les champs email et message plus un bouton pour envoyer le message. Pense bien à ajouter les labels pour les différents champs
+            Ce formulaire n'a pas besoin d'être fonctionnel, réalise juste la mise en forme.
+          -->
+        <form action="mailto:someone-amazing@wildcodeschool.fr" method="post" enctype="text/plain">
+            <div>
+                <label for="email">Email</label>
+                <input type="text" name="mail" placeholder="Write your email">
+            </div>
+            <div>
+                <label for="message">Message</label>
+                <textarea name="message" placeholder="We're all ears, tell us :)"></textarea>
+            </div>
+            <button type="submit" value="Send">Send my message</button>
+        </form>
+    </section>
+
+    <footer>
+        <!-- ✔️: Entre ton nom et prénom.
+            Mets en place un lien vers le site de la Wild Code School (https://wildcodeschool.fr).
+            Tu peux egalement mettre un lien sur ton nom vers ton site, ton blog ou ton profil github ou linkedin, si tu en as un.
+           -->
+        <p>Wild Circus by Camille Charteau for the
+            <a href="https://wildcodeschool.fr">Wild Code School</a>
+            Challenge - 02.23.2019
+            <br/>
+            <br/>
+            Contact me on
+            <a href="https://www.linkedin.com/in/camille-charteau">Linkedin</a>
+            , discover the amazing non-profit organization
+            <a href="https://taalproject.com">TAAL Project - New Technologies for everyone</a>
+            I'm part of, and do not forget to visit my
+            <a href="https://github.com/Campalo">Github</a>
+            profile to see my last programming experiments.
+            <br/>
+            Feel free to check my
+            <a href="http://www.france-ioi.org/user/perso.php?sLogin=campalo">France-IOI</a>
+            , my
+            <a href="https://www.codecademy.com/fr/users/Campalo/achievements">Code Academy</a>
+            and my
+            <a href="https://openclassrooms.com/fr/membres/camille-charteau">OpenClassroom</a>
+            profiles too.
+        </p>
+        <h5>
+            I hope will chat soon! 😺
+            <br/>
+            #WomenInTech #WomenWhoCode 👩‍💻
+        </h5>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,401 @@
+/* Afin de valider ton code CSS, clic sur la petite flèche en haut à droite de cette fenêtre. Pour rappel, tu peux jeter un oeil par ici pour en savoir un peu plus: https://blog.codepen.io/2017/10/11/analyze-css-now-using-stylelint/ */
+
+/* Ecris ici ton code CSS */
+
+/* Fonts imported from Google Fonts */
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC|Laila);
+
+/* Colors based on  http://bootstrap.themes.guide/bootstrap_purple/ */
+:root.light {
+  --primary: #563d7c;
+  --secondary: #d2c4e9;
+  --white: #f3f3f3;
+  --black: #343434;
+  --action: #ffc107;
+  --shadow: 3px 3px 2px rgba(0, 0, 0, 0.8);
+  --font: 'Amatic SC', cursive;
+  --font-size: 1.8rem;
+  --image: url(https://nnimgt-a.akamaihd.net/transform/v1/crop/frm/rdPnbxNSt95RbDXSGgzrdz/019a69d2-91fd-403f-ad2f-1719bd050875.jpg/r0_1_1200_676_w1200_h678_fmax.jpg);
+}
+
+/* Colors based on  http://bootstrap.themes.guide/darkster/ */
+:root.dark {
+  --primary:  #ff8b07;
+  --secondary: #303030;
+  --white: #dddddd;
+  --black: #000000;
+  --action: #563d7c;
+  --shadow: 3px 3px 3px rgba(0, 0, 0, 0.9);
+  --font: 'Laila', serif;
+  --font-size: 1.2rem;
+  --image: url(http://www.circusworldbaraboo.org/wp-content/uploads/2015/10/Tigers-8-1024x654.jpg);
+}
+
+* {
+  font-family: var(--font);
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--secondary);
+}
+
+/***
+*GLOBAL 
+***/
+section {
+  padding: 60px 100px;
+}
+
+h2 {
+  font-size: 3rem;
+  padding-bottom: 20px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+p, a, button {
+  font-size: var(--font-size);
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--white);
+  text-transform: uppercase;
+  padding: 20px;
+}
+
+a:hover {
+  color: var(--action);
+}
+
+hr {
+  margin-block-start: 0rem;
+  margin-block-end: 0rem;
+}
+
+button {
+  background-color: var(--action);
+  border: 5px solid var(--action);
+  border-radius: 100px;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  padding: 10px;
+  color: var(--white);
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out; 
+}
+
+button:hover {
+  background-color: var(--white);
+  color: var(--action);
+}
+
+button:focus, button:active {
+  outline: none;
+  box-shadow: inset 3px 3px 2px rgba(0, 0, 0, 0.8);
+}
+
+/***
+* HEADER
+***/
+header {
+  height: calc(100vh - 80px); /* to cover the viewport minus the nav */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: var(--image);
+  background-color: var(--primary);
+  background-size: cover;
+  background-position: center;
+}
+
+header h1 {
+  font-size: 6rem;
+  color: var(--white);
+  text-shadow: var(--shadow);
+}
+
+/***
+* NAV
+***/
+nav {
+  position: sticky;
+  top: 0;
+  background-color: var(--primary);
+  box-shadow: var(--shadow);
+  height: 80px; /* Theme button should be center inside the nav (15 + 50 + 15 = 80px) */
+}
+
+nav ul {
+  margin: 0;
+  height: 100%;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+}
+
+/***
+* SWITCH THEME + TOP BUTTON
+***/
+#switch {
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  background-color: var(--action);
+  border-radius: 100px;
+  box-shadow: var(--shadow);
+  overflow: hidden; /* Hide all elements that are inside the div #switch but too large (outside of the viewport) */
+}
+
+svg {
+  fill: var(--primary);
+  height: 50px;
+  width: 50px;
+}
+
+svg:hover {
+  fill: var(--white);
+}
+
+#switch svg {
+  transition: all 0.5s ease-in-out;  
+}
+
+#switch.light svg {
+  transform: translateY(0);
+}
+
+#switch.dark svg {
+  transform: translateY(-50px);
+}
+
+/* Top button design */
+#top {
+  transform: translateY(100px);  /* hidden */
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  cursor: pointer;
+  background-color: var(--action);
+  border-radius: 100px;
+  border: 0;
+  box-shadow: var(--shadow);
+  transition: transform 0.5s ease-in-out;
+}
+
+
+/***
+* PERFORMANCES SECTION
+***/
+#performances {
+  color: var(--primary);
+}
+
+#performances p {
+  color: var(--black);
+}
+
+#performances ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
+}
+
+#performances li {
+  margin-right: 20px;
+  margin-left: 20px;
+  width: 33%;
+}
+
+.card {
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+
+.card h3 {
+  font-size: 2.3rem;
+  text-align: center;
+}
+
+.card p {
+  text-align: justify;
+}
+
+/***
+* ABOUT SECTION
+***/
+#about {
+  color: var(--white);
+  background-color: var(--primary);
+}
+
+#about p {
+  color: var(--secondary);
+}
+
+/* Animation on h4 */
+#about h4 {
+  font-size: 2rem;
+  color: var(--action);
+  text-align: center;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {color: var(--action);} 
+  60% {color: var(--action);}
+  100% {color: var(--primary);}
+}
+
+/* Game */ 
+article {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#board {
+  --lvl: 1;
+  display: grid;
+  height: 400px;
+  width: 400px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow);
+  grid-template-columns: repeat(var(--lvl), 1fr);
+  grid-template-rows: repeat(var(--lvl), 1fr);
+  cursor: pointer;
+}
+
+article button {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/***
+* PRICES SECTION
+***/
+#prices {
+  color: var(--primary);
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+}
+
+#prices p {
+  color: var(--black);
+}
+
+/* Table design */
+table {
+  border-collapse: collapse; /* Remove the space between the borders */
+  background-color: var(--white);
+  color: var(--black);
+  box-shadow: var(--shadow);
+}
+
+th, td {
+  border: 15px solid var(--primary);
+  padding: 5px;
+  font-size: var(--font-size);
+}
+
+th {
+  background-color: var(--primary);
+  color: var(--white);
+  text-align: left;
+}
+
+td {
+  text-align: center;
+}
+
+
+/***
+* CONTACT SECTION 
+***/
+#contact {
+  color: var(--white);
+  background-color: var(--primary);
+}
+
+form {
+  margin: auto;
+  width: 700px;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+}
+
+label {
+  display: inline-block; /* to align the labels */
+  width: 140px;
+  text-align: left;
+  font-size: 2rem;
+  color: var(--white);
+  padding: 15px;
+  font-weight: bold;
+}
+
+input, textarea {
+  font-size: var(--font-size);
+  color: var(--primary);
+  height: 40px;
+  width: 400px;
+  margin: 15px;
+  padding: 10px;
+  box-shadow: var(--shadow);
+  border: none;
+  background-color: var(--white);
+}
+
+textarea {
+  height: 200px;
+  vertical-align: top;
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--secondary);
+}
+
+/***
+* FOOTER
+***/
+footer {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 10px 100px;
+}
+
+footer h5 {
+  font-size: var(--font-size);
+  color: var(--action);
+  text-align: center;
+  margin: 0;
+}
+
+footer a {
+  padding: 0;
+}
